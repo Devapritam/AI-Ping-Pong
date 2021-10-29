@@ -136,3 +136,16 @@ h4 {
   display: inline-block;
   width: 45%;
 }
+
+.modal-body {
+  text-align: left;
+}
+
+.modal-body ol {
+  margin-left: 15px;
+}
+
+.modal-body h5 {
+  font-weight: bolder;
+  font-size: 15px;
+}
