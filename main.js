@@ -1,4 +1,6 @@
-
+rightWristX = 0;
+rightWristY = 0;
+rightWristScore = 0;
 /*created by prashant shukla */
 
 var paddle2 =10,paddle1=10;
@@ -39,6 +41,9 @@ function modelLoaded() {
 function gotPoses(results) {
   if(results.length > 0) {
     console.log(results);
+    rightWristX = results[0].pose.rightWrist.x;
+    rightWristY = results[0].pose.rightWrist.y;
+    rightWristScore = results[0].pose.keypoints[10].score;
   }
 }
 
@@ -56,6 +61,11 @@ function draw(){
  stroke("black");
  rect(0,0,20,700);
  
+ if(rightWristScore > 0.2) {
+   fill('#F10000');
+   stroke('#F10000');
+   circle(rightWristX, rightWristY, 20);
+ }
    //funtion paddleInCanvas call 
    paddleInCanvas();
  
